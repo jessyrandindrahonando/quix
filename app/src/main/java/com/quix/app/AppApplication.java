@@ -1,3 +1,4 @@
+
 package com.quix.app;
 
 import org.springframework.boot.SpringApplication;
