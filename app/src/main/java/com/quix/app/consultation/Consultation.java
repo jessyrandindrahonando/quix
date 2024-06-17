@@ -29,7 +29,6 @@ public class Consultation {
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateFin;
 
-    // Getters and Setters
 
     public Long getIdConsultation() {
         return idConsultation;
