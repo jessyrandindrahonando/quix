@@ -5,11 +5,21 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "centre")
 public class Centre {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(
+        strategy = GenerationType.SEQUENCE,
+        generator = "centre_seq"
+    )
+
+    @SequenceGenerator(
+        name = "centre_seq", 
+        sequenceName = "centre_sequence", 
+        allocationSize = 1
+    )
     @Column(name = "idCentre")
     private Long idCentre;
-    
+
     @Column(name = "nom", nullable = false)
     private String nom;
 
@@ -29,4 +39,3 @@ public class Centre {
         this.nom = nom;
     }
 }
-

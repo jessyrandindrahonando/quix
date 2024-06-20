@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.*;
 public class UserAllCenterController {
     
     @Autowired
-    private UserAllCenter userAllCenter;
+    private UserAllCenterService userAllCenterService;
 
     @PostMapping("/all-centres")
     public void createUtilisateurForAllCentres(@RequestBody Utilisateur utilisateur) {
-        userAllCenter.createUtilisateurForAllCentres(utilisateur);
+        userAllCenterService.createUtilisateurForAllCentres(utilisateur);
     }
 }
