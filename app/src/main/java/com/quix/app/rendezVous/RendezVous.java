@@ -8,7 +8,15 @@ import java.util.Date;
 public class RendezVous {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(
+        strategy = GenerationType.SEQUENCE, 
+        generator = "rendezVous_seq"
+    )
+    @SequenceGenerator(
+        name = "rendezVous_seq", 
+        sequenceName = "rendezVous_sequence", 
+        allocationSize = 1
+    )
     @Column(name = "idRendezvous")
     private Long idRendezvous;
 

@@ -7,8 +7,16 @@ import java.util.Date;
 @Table(name = "consultation")
 public class Consultation {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id    
+    @GeneratedValue(
+        strategy = GenerationType.SEQUENCE, 
+        generator = "consultation_seq"
+    )
+    @SequenceGenerator(
+        name = "consultation_seq", 
+        sequenceName = "consultation_sequence", 
+        allocationSize = 1
+    )
     @Column(name = "idConsultation")
     private Long idConsultation;
 
